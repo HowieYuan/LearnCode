@@ -1,4 +1,4 @@
-package com.howie.learncode.dynamicProxy;
+package com.howie.learncode.proxy.dynamic;
 
 import java.lang.reflect.Proxy;
 
@@ -13,7 +13,7 @@ import java.lang.reflect.Proxy;
 public class WorkClient {
     public static void main(String[] args) throws Exception {
         //给代理控制器传入一个委托对象
-        PersonHandler handler = new PersonHandler(new Developer());
+        ProxyHandler handler = new ProxyHandler(new Developer());
         //创建一个代理对象
         Object o = Proxy.newProxyInstance(Person.class.getClassLoader(),
                 new Class<?>[]{Person.class}, handler);

@@ -1,4 +1,4 @@
-package com.howie.learncode.dynamicProxy;
+package com.howie.learncode.proxy.dynamic;
 
 /**
  * Created with IntelliJ IDEA

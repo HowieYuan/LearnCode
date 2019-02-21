@@ -1,4 +1,4 @@
-package com.howie.learncode.dynamicProxy;
+package com.howie.learncode.proxy.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -11,11 +11,15 @@ import java.lang.reflect.Method;
  * @Date 2019-02-21
  * @Time 17:32
  */
-public class PersonHandler implements InvocationHandler {
+public class ProxyHandler implements InvocationHandler {
 
     private Object object;
 
-    public PersonHandler(Object object) {
+    /**
+     * 控制器类传入的是 Object 类型，因此这个类即可满足众多代理需求一致的类的需求
+     * @param object
+     */
+    public ProxyHandler(Object object) {
         this.object = object;
     }
 
