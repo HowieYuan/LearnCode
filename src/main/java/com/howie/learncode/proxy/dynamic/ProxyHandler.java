@@ -2,6 +2,7 @@ package com.howie.learncode.proxy.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * Created with IntelliJ IDEA
@@ -33,5 +34,13 @@ public class ProxyHandler implements InvocationHandler {
         Object o = method.invoke(object, args);
         System.out.println("工作后代理帮我做的事情");
         return o;
+    }
+
+    /**
+     * 返回一个代理对象实例
+     */
+    public <T> T getProxy() {
+        return (T)Proxy.newProxyInstance(object.getClass().getClassLoader(),
+                object.getClass().getInterfaces(), this);
     }
 }

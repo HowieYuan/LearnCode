@@ -12,14 +12,9 @@ import java.lang.reflect.Proxy;
  */
 public class WorkClient {
     public static void main(String[] args) throws Exception {
-        //给代理控制器传入一个委托对象
-        ProxyHandler handler = new ProxyHandler(new Developer());
-        //创建一个代理对象
-        Object o = Proxy.newProxyInstance(Person.class.getClassLoader(),
-                new Class<?>[]{Person.class}, handler);
-        //通过动态代理对象调用
-        Person subject = (Person) o;
+        //给代理控制器传入一个委托对象，创建一个代理对象
+        Person person = new ProxyHandler(new Developer()).getProxy();
         //输出委托类的结果
-        subject.work();
+        person.work();
     }
 }
