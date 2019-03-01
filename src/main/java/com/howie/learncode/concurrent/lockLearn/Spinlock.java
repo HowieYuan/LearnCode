@@ -16,6 +16,11 @@ public class Spinlock {
 
     public void lock() {
         Thread thread = Thread.currentThread();
+        /*
+         CAS 思想：
+         当 AtomicReference 里面的值为 null，将当前线程设置为 AtomicReference 的值
+         如果当前不为 null，则不断自旋循环
+         */
         while (!atomicReference.compareAndSet(null, thread)) {
 
         }
@@ -23,6 +28,10 @@ public class Spinlock {
 
     public void unlock() {
         Thread thread = Thread.currentThread();
+        /*
+        CAS 思想：
+        解锁操作，当 AtomicReference 里面的值为当前线程，则可以无误地改为 null，释放自旋锁
+         */
         atomicReference.compareAndSet(thread, null);
     }
 }

@@ -21,13 +21,7 @@ public class MethodTest implements Runnable {
      * synchronized 修饰实例方法
      */
     public synchronized void increase() {
-        Spinlock lock = new Spinlock();
-        lock.lock();
-        try {
-            i++;
-        } finally {
-            lock.unlock();
-        }
+        i++;
     }
 
     @Override
