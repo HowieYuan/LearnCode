@@ -1,4 +1,5 @@
 package com.howie.learncode.juc;
+import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -34,8 +35,6 @@ public class SemaphoreTest {
 
                 System.out.println("线程" + Thread.currentThread().getName() +
                         "进入，当前已有" + (3 - semaphore.availablePermits()) + "个并发");
-                System.out.println("线程" + Thread.currentThread().getName() +
-                        "进入，当前已有" + (semaphore.getQueueLength()));
                 try {
                     Thread.sleep((long) (Math.random() * 10000));
                 } catch (InterruptedException e) {

@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
  * Created with IntelliJ IDEA
  *
  * @Author yuanhaoyue swithaoy@gmail.com
- * @Description
+ * @Description 闭锁
  * @Date 2018-08-08
  * @Time 20:38
  */
@@ -23,7 +23,7 @@ public class CountDownLatchTest {
         ExecutorService service = Executors.newCachedThreadPool();
         final CountDownLatch cdOrder = new CountDownLatch(1);
         final CountDownLatch cdAnswer = new CountDownLatch(3);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             Runnable runnable = () -> {
                 try {
                     System.out.println("线程线程" + Thread.currentThread().getName() +
