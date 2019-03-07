@@ -27,6 +27,7 @@ public class AtomicTest {
             });
             threads[i].start();
         }
+        
         //保证前面的线程都执行完
         while (Thread.activeCount() > 2) {
             Thread.yield();
