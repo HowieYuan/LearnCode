@@ -1,4 +1,4 @@
-package com.howie.learncode.operatingSystem;
+package com.howie.learncode.concurrent.deadlock;
 
 
 import java.util.concurrent.ConcurrentHashMap;
