@@ -10,6 +10,6 @@ package com.howie.learncode.proxy.advice;
  */
 public interface LogAdvice {
     void before();
-
+ 
     void after();
 }
